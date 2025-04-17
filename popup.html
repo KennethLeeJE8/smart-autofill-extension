@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Autofill</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Smart Autofill</h1>
+    </header>
+    
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="personal">Personal Info</button>
+      <button class="tab-btn" data-tab="address">Addresses</button>
+      <button class="tab-btn" data-tab="payment">Payment</button>
+    </div>
+
+    <div class="tab-content active" id="personal">
+      <div class="linkedin-import">
+        <h2>Import from LinkedIn</h2>
+        <div class="form-group">
+          <label for="linkedinUrl">LinkedIn Profile URL</label>
+          <input type="url" id="linkedinUrl" name="linkedinUrl" placeholder="https://www.linkedin.com/in/username">
+          <button type="button" id="importLinkedIn" class="import-btn">Import Profile Data</button>
+        </div>
+        <div id="importStatus" class="import-status"></div>
+      </div>
+      <div class="separator">
+        <span>or enter manually</span>
+      </div>
+      <form id="personalForm">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName">
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="occupation">About Me</label>
+          <input type="text" id="occupation" name="occupation">
+        </div>
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company">
+        </div>
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location">
+        </div>
+        <div class="form-group">
+          <label for="website">Website</label>
+          <input type="url" id="website" name="website" placeholder="https://example.com">
+        </div>
+        <div class="form-group">
+          <label for="connections">Connections</label>
+          <input type="text" id="connections" name="connections" placeholder="e.g., 500+">
+        </div>
+        <div class="form-group">
+          <label for="followers">Followers</label>
+          <input type="text" id="followers" name="followers" placeholder="e.g., 620">
+        </div>
+        <div class="form-group">
+          <label for="profileImage">Profile Image URL</label>
+          <input type="text" id="profileImage" name="profileImage" placeholder="URL of profile image">
+        </div>
+        <button type="submit" class="save-btn">Save Personal Info</button>
+      </form>
+    </div>
+
+    <div class="tab-content" id="address">
+      <div id="addressList"></div>
+      <button id="addAddress" class="add-btn">Add New Address</button>
+      <form id="addressForm" class="hidden">
+        <div class="form-group">
+          <label for="addressName">Address Name</label>
+          <input type="text" id="addressName" name="addressName" placeholder="e.g., Home, Work">
+        </div>
+        <div class="form-group">
+          <label for="street">Street Address</label>
+          <input type="text" id="street" name="street">
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city" name="city">
+        </div>
+        <div class="form-group">
+          <label for="state">State</label>
+          <input type="text" id="state" name="state">
+        </div>
+        <div class="form-group">
+          <label for="zipCode">ZIP Code</label>
+          <input type="text" id="zipCode" name="zipCode">
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" id="country" name="country">
+        </div>
+        <button type="submit" class="save-btn">Save Address</button>
+        <button type="button" class="cancel-btn">Cancel</button>
+      </form>
+    </div>
+
+    <div class="tab-content" id="payment">
+      <div id="paymentList"></div>
+      <button id="addPayment" class="add-btn">Add New Payment Method</button>
+      <form id="paymentForm" class="hidden">
+        <div class="form-group">
+          <label for="cardName">Card Name</label>
+          <input type="text" id="cardName" name="cardName" placeholder="e.g., Personal Visa">
+        </div>
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" id="cardNumber" name="cardNumber">
+        </div>
+        <div class="form-group">
+          <label for="expiryDate">Expiry Date</label>
+          <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY">
+        </div>
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" name="cvv">
+        </div>
+        <button type="submit" class="save-btn">Save Payment Method</button>
+        <button type="button" class="cancel-btn">Cancel</button>
+      </form>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 
